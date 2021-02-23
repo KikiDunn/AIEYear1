@@ -15,9 +15,10 @@ class Program
 		long previousTime;
 		//get the current time
 		long unixTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-		//check is 
+		//check if the file has been created yet
 		if (File.Exists(@"..\..\..\text.txt"))
 		{
+			//reads the previous time from the file
 			using (StreamReader reader = new StreamReader(@"..\..\..\text.txt"))
 			{
 				previousTime = long.Parse(reader.ReadLine());
@@ -27,13 +28,16 @@ class Program
 		}
 		else
 		{
-			//File.Create(@"..\..\..\text.txt");
+			//if the file doesn't exist sets the previous time to the current time
 			previousTime = unixTime;
 		}
-				
+		//starts writing to the file
+		//if it doesn't exist this will make the file
 		using (StreamWriter writer = new StreamWriter(@"..\..\..\text.txt"))
 		{
+			//writes the current time
 			writer.WriteLine(unixTime);
+			//writes the time that has elapsed since last time
 			writer.WriteLine(unixTime - previousTime);
 			writer.Close();
 		}
