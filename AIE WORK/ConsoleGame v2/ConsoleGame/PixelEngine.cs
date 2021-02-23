@@ -110,14 +110,13 @@ class PixelEngine
             {
                 if (j + 1 == framedata.GetLength(0))
                 {
-                    endlines[endlinecount] = pixelcount- previousline;
+                    endlines[endlinecount] = pixelcount - previousline;
                     previousline = pixelcount;
                     endlinecount++;
                 }
                 if (framedata[j,i] != previousPixel)
                 {
-                    currentPixel.chunk = "";
-                    
+                    currentPixel.chunk = "";                    
                     for (int l = 0; l < endlinecount; l++)
                     {
                         currentPixel.chunk += String.Concat(Enumerable.Repeat("  ", endlines[l]) + "\n");

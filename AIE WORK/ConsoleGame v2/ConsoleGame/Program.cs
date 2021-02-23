@@ -22,8 +22,8 @@ class Program
             //input = Console.ReadKey();
             while (input.Key != ConsoleKey.Q)
             {
-                //input = Console.ReadKey();
-                input2 = Console.Read();
+                input = Console.ReadKey();
+                //input2 = Console.Read();
             }
             quit = true;
         }).Start();
