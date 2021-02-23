@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\Assignment 1\\Exercise 1\\Bubblesort\\Bubblesort.csproj",
-      "projectName": "Bubblesort",
-      "projectPath": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\Assignment 1\\Exercise 1\\Bubblesort\\Bubblesort.csproj",
+      "projectUniqueName": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\ConsoleGame v2\\ConsoleGame\\ConsoleGame.csproj",
+      "projectName": "ConsoleGame",
+      "projectPath": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\ConsoleGame v2\\ConsoleGame\\ConsoleGame.csproj",
       "packagesPath": "C:\\Users\\s210558\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\Assignment 1\\Exercise 1\\Bubblesort\\obj\\",
+      "outputPath": "C:\\Users\\s210558\\Desktop\\AIEYear1\\AIE WORK\\ConsoleGame v2\\ConsoleGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\s210558\\AppData\\Roaming\\NuGet\\NuGet.Config",

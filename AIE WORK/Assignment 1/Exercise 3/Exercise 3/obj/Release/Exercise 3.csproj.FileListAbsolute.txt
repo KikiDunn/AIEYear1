@@ -1,0 +1,6 @@
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\bin\Release\Exercise 3.exe.config
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\bin\Release\Exercise 3.exe
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\bin\Release\Exercise 3.pdb
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\obj\Release\Exercise 3.csprojAssemblyReference.cache
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\obj\Release\Exercise 3.exe
+C:\Users\s210558\Desktop\AIEYear1\AIE WORK\Assignment 1\Exercise 3\Exercise 3\obj\Release\Exercise 3.pdb
