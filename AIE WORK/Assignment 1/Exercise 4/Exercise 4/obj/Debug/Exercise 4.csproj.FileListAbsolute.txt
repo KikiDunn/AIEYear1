@@ -1,0 +1,6 @@
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\bin\Debug\Exercise 4.exe.config
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\bin\Debug\Exercise 4.exe
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\bin\Debug\Exercise 4.pdb
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\obj\Debug\Exercise 4.csprojAssemblyReference.cache
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\obj\Debug\Exercise 4.exe
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Exercise 4\Exercise 4\obj\Debug\Exercise 4.pdb

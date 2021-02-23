@@ -1,0 +1,35 @@
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.exe
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.deps.json
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.json
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.dev.json
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.pdb
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.csprojAssemblyReference.cache
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfoInputs.cache
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfo.cs
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.pdb
+C:\Users\asus\Desktop\AIE\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.genruntimeconfig.cache
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.exe
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.deps.json
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.json
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.dev.json
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.pdb
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.csprojAssemblyReference.cache
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfoInputs.cache
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfo.cs
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\s210558\Desktop\AIE WORK\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.pdb
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.exe
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.deps.json
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.json
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.runtimeconfig.dev.json
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\bin\Debug\netcoreapp3.1\Bubblesort.pdb
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.csprojAssemblyReference.cache
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfoInputs.cache
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.AssemblyInfo.cs
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.dll
+C:\Users\s210558\Desktop\AIE WORK\Assignment 1\Bubblesort\Bubblesort\obj\Debug\netcoreapp3.1\Bubblesort.pdb

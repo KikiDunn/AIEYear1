@@ -1,0 +1,6 @@
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\bin\Debug\mondaysession2.exe.config
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\bin\Debug\mondaysession2.exe
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\bin\Debug\mondaysession2.pdb
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\obj\Debug\mondaysession2.csprojAssemblyReference.cache
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\obj\Debug\mondaysession2.exe
+C:\Users\s210558\source\repos\mondaysession2\mondaysession2\obj\Debug\mondaysession2.pdb

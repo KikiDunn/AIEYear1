@@ -1,0 +1,6 @@
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\bin\Debug\TestProgram.exe.config
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\bin\Debug\TestProgram.exe
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\bin\Debug\TestProgram.pdb
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\obj\Debug\TestProgram.csprojAssemblyReference.cache
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\obj\Debug\TestProgram.exe
+C:\Users\s210558\Desktop\Week 1\TestProgram\TestProgram\obj\Debug\TestProgram.pdb
