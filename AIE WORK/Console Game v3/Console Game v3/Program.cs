@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using System.Runtime.InteropServices;
 class Program
 {
 	static void Main(string[] args)
 	{
+		BufferEngine engine = new BufferEngine();
 		Console.CursorVisible = false;
 		ConsoleKeyInfo input = new ConsoleKeyInfo();
 		bool quit = false;
@@ -51,7 +51,7 @@ class Program
 		}).Start();
 		while (!quit)
 		{
-
+			engine.print();
 		}
 	}
 }
