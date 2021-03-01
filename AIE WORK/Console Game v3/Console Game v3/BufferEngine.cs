@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 using System.Threading;
+
 class BufferEngine
 {
-	short width = 960;
-	short height = 202;
+	short width = (short)Console.BufferWidth;
+	short height = (short)Console.BufferHeight;
 	ConsoleColor[,] framedata;
 	List<Sprite> sprites = new List<Sprite>();
 	int spriteCount = 0;
 	public BufferEngine()
 	{
+		
 		framedata = new ConsoleColor[width, height];
 		for (int y = 0; y < height; y++)
 		{
@@ -104,7 +106,7 @@ class BufferEngine
 					  ref rect);
 		}
 	}
-	public void addSprite(ConsoleColor[,] pixels, int posX, int posY, bool hidden)
+	public int addSprite(ConsoleColor[,] pixels, int posX, int posY, bool hidden)
 	{
 		Sprite temp = new Sprite();
 		temp.pixels = pixels;
@@ -113,8 +115,9 @@ class BufferEngine
 		temp.y = posY;
 		sprites.Add(temp);
 		spriteCount++;
+		return spriteCount - 1;
 	}
-	public void moveSprite(int ID, int posX, int posY)
+	public void moveSprite(int ID, double posX, double posY)
 	{
 		sprites[ID].x += posX;
 		sprites[ID].y += posY;
@@ -122,6 +125,45 @@ class BufferEngine
 	public void hideSprite(int ID, bool hidden)
 	{
 		sprites[ID].hidden = hidden;
+	}
+	public void loadFrame()
+	{
+		for(int i = 0; i < spriteCount; i++)
+		{
+			if(sprites[i].hidden == false)
+			{
+				for (int y = 0; y < sprites[i].pixels.GetLength(1); y++)
+				{
+					for (int x = 0; x < sprites[i].pixels.GetLength(0); x++)
+					{
+						float hy = (float)Math.Sqrt(Math.Pow((float)x - sprites[i].pixels.GetLength(0) / 2f, 2) + Math.Pow(y*2.5 - sprites[i].pixels.GetLength(1)*2.5 / 2, 2));
+						float oAngle = (float)Math.Atan2(y*2.5 - (sprites[i].pixels.GetLength(1)*2.5 / 2), (float)x - (sprites[i].pixels.GetLength(0) / 2f));
+						float trigX = (float)Math.Cos(oAngle + sprites[i].angle * (Math.PI / 180f)) * hy;
+						float trigY = (float)Math.Sin(oAngle + sprites[i].angle * (Math.PI / 180f))  * hy;
+						float relx = (trigX + sprites[i].pixels.GetLength(0) / 2f);
+						float rely = (trigY + (sprites[i].pixels.GetLength(1)*2.5f / 2))/2.5f;
+						int inx = (int)Math.Round(sprites[i].x + relx);
+						int iny = (int)Math.Round(sprites[i].y + rely);
+						if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+						{
+							framedata[inx, iny] = sprites[i].pixels[x, y];
+						}
+					}
+				}
+			}
+		}
+	}
+	public double getSpriteX(int ID)
+	{
+		return sprites[ID].x;
+	}
+	public double getSpriteY(int ID)
+	{
+		return sprites[ID].y;
+	}
+	public void rotateSprite(int ID, int degrees)
+	{
+		sprites[ID].angle += degrees;
 	}
 }
 	
