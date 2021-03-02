@@ -136,12 +136,12 @@ class BufferEngine
 				{
 					for (int x = 0; x < sprites[i].pixels.GetLength(0); x++)
 					{
-						float hy = (float)Math.Sqrt(Math.Pow((float)x - sprites[i].pixels.GetLength(0) / 2f, 2) + Math.Pow(y*2.5 - sprites[i].pixels.GetLength(1)*2.5 / 2, 2));
-						float oAngle = (float)Math.Atan2(y*2.5 - (sprites[i].pixels.GetLength(1)*2.5 / 2), (float)x - (sprites[i].pixels.GetLength(0) / 2f));
+						float hy = (float)Math.Sqrt(Math.Pow(x/2f - sprites[i].pixels.GetLength(0) / 4f, 2) + Math.Pow(y/2f - sprites[i].pixels.GetLength(1)/ 4f, 2));
+						float oAngle = (float)Math.Atan2(y/2f - (sprites[i].pixels.GetLength(1)/4f), x/2f - (sprites[i].pixels.GetLength(0) / 4f));
 						float trigX = (float)Math.Cos(oAngle + sprites[i].angle * (Math.PI / 180f)) * hy;
 						float trigY = (float)Math.Sin(oAngle + sprites[i].angle * (Math.PI / 180f))  * hy;
-						float relx = (trigX + sprites[i].pixels.GetLength(0) / 2f);
-						float rely = (trigY + (sprites[i].pixels.GetLength(1)*2.5f / 2))/2.5f;
+						float relx = (trigX + sprites[i].pixels.GetLength(0) / 4f);
+						float rely = (trigY + (sprites[i].pixels.GetLength(1)/4f))/2.5f;
 						int inx = (int)Math.Round(sprites[i].x + relx);
 						int iny = (int)Math.Round(sprites[i].y + rely);
 						if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)

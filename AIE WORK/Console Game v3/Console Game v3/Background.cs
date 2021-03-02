@@ -10,7 +10,7 @@ class Background
 	int ID;
 	public Background(BufferEngine engine)
 	{
-		ConsoleColor[,] background = new ConsoleColor[Console.BufferWidth, Console.BufferHeight];
+		ConsoleColor[,] background = new ConsoleColor[Console.BufferWidth*2, Console.BufferHeight*5];
 		this.engine = engine;
 		for (int y = 0; y < background.GetLength(1); y++)
 		{

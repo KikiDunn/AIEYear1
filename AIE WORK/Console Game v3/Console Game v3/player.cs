@@ -11,12 +11,28 @@ class Player
 	public Player(BufferEngine engine)
 	{
 		this.engine = engine;
-		ConsoleColor[,] playerSprite = new ConsoleColor[25, 10];
+		ConsoleColor[,] playerSprite = new ConsoleColor[50, 50];
+		
 		for (int i = 0; i < playerSprite.GetLength(1); i++)
 		{
 			for (int j = 0; j < playerSprite.GetLength(0); j++)
 			{
-				playerSprite[j, i] = ConsoleColor.Blue;
+				if (j <= playerSprite.GetLength(0)/2 && i <= playerSprite.GetLength(1) / 2)
+				{
+					playerSprite[j, i] = ConsoleColor.Blue;
+				}
+				if (j > playerSprite.GetLength(0) / 2 && i <= playerSprite.GetLength(1) / 2)
+				{
+					playerSprite[j, i] = ConsoleColor.DarkRed;
+				}
+				if (j <= playerSprite.GetLength(0) / 2 && i > playerSprite.GetLength(1) / 2)
+				{
+					playerSprite[j, i] = ConsoleColor.DarkRed;
+				}
+				if (j > playerSprite.GetLength(0) / 2 && i > playerSprite.GetLength(1) / 2)
+				{
+					playerSprite[j, i] = ConsoleColor.Blue;
+				}
 			}
 		}
 		ID = engine.addSprite(playerSprite, 0, 0, false);
