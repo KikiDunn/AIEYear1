@@ -106,7 +106,7 @@ class BufferEngine
 					  ref rect);
 		}
 	}
-	public int addSprite(ConsoleColor[,] pixels, int posX, int posY, bool hidden)
+	public int addSprite(int[,] pixels, int posX, int posY, bool hidden)
 	{
 		Sprite temp = new Sprite();
 		temp.pixels = pixels;
@@ -132,21 +132,45 @@ class BufferEngine
 		{
 			if(sprites[i].hidden == false)
 			{
-				for (int y = 0; y < sprites[i].pixels.GetLength(1); y++)
+				if (sprites[i].angle != 0)
 				{
-					for (int x = 0; x < sprites[i].pixels.GetLength(0); x++)
+					for (int y = 0; y < sprites[i].pixels.GetLength(1); y++)
 					{
-						float hy = (float)Math.Sqrt(Math.Pow(x/2f - sprites[i].pixels.GetLength(0) / 4f, 2) + Math.Pow(y/2f - sprites[i].pixels.GetLength(1)/ 4f, 2));
-						float oAngle = (float)Math.Atan2(y/2f - (sprites[i].pixels.GetLength(1)/4f), x/2f - (sprites[i].pixels.GetLength(0) / 4f));
-						float trigX = (float)Math.Cos(oAngle + sprites[i].angle * (Math.PI / 180f)) * hy;
-						float trigY = (float)Math.Sin(oAngle + sprites[i].angle * (Math.PI / 180f))  * hy;
-						float relx = (trigX + sprites[i].pixels.GetLength(0) / 4f);
-						float rely = (trigY + (sprites[i].pixels.GetLength(1)/4f))/2.5f;
-						int inx = (int)Math.Round(sprites[i].x + relx);
-						int iny = (int)Math.Round(sprites[i].y + rely);
-						if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+						for (int x = 0; x < sprites[i].pixels.GetLength(0); x++)
 						{
-							framedata[inx, iny] = sprites[i].pixels[x, y];
+							if (sprites[i].pixels[x, y] != -1)
+							{
+								float hy = (float)Math.Sqrt(Math.Pow(x / 2f - sprites[i].pixels.GetLength(0) / 4f, 2) + Math.Pow(y / 2f - sprites[i].pixels.GetLength(1) / 4f, 2));
+								float oAngle = (float)Math.Atan2(y / 2f - (sprites[i].pixels.GetLength(1) / 4f), x / 2f - (sprites[i].pixels.GetLength(0) / 4f));
+								float trigX = (float)Math.Cos(oAngle + sprites[i].angle * (Math.PI / 180f)) * hy;
+								float trigY = (float)Math.Sin(oAngle + sprites[i].angle * (Math.PI / 180f)) * hy;
+								float relx = (trigX + sprites[i].pixels.GetLength(0) / 4f);
+								float rely = (trigY + (sprites[i].pixels.GetLength(1) / 4f)) / 2.5f;
+								int inx = (int)Math.Round(sprites[i].x/2 + relx);
+								int iny = (int)Math.Round(sprites[i].y/5 + rely);
+								if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+								{
+									framedata[inx, iny] = (ConsoleColor)sprites[i].pixels[x, y];
+								}
+							}
+						}
+					}
+				}
+				else
+				{
+					for (int y = 2; y < sprites[i].pixels.GetLength(1); y += 5)
+					{
+						for (int x = 0; x < sprites[i].pixels.GetLength(0); x++)
+						{
+							if (sprites[i].pixels[x, y] != -1)
+							{
+								int inx = (int)Math.Round(sprites[i].x/2 + x / 2f);
+								int iny = (int)Math.Round(sprites[i].y/5 + y / 5f);
+								if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+								{
+									framedata[inx, iny] = (ConsoleColor)sprites[i].pixels[x, y];
+								}
+							}
 						}
 					}
 				}
@@ -164,6 +188,10 @@ class BufferEngine
 	public void rotateSprite(int ID, int degrees)
 	{
 		sprites[ID].angle += degrees;
+	}
+	public double getAngle(int ID)
+	{
+		return sprites[ID].angle;
 	}
 }
 	

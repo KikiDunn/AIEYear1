@@ -35,7 +35,7 @@ class Input
 						input = new ConsoleKeyInfo();
 						break;
 					case ConsoleKey.A:
-						player.moveLeft();
+						player.rotateLeft();
 						input = new ConsoleKeyInfo();
 						break;
 					case ConsoleKey.S:
@@ -43,14 +43,6 @@ class Input
 						input = new ConsoleKeyInfo();
 						break;
 					case ConsoleKey.D:
-						player.moveRight();
-						input = new ConsoleKeyInfo();
-						break;
-					case ConsoleKey.Q:
-						player.rotateLeft();
-						input = new ConsoleKeyInfo();
-						break;
-					case ConsoleKey.E:
 						player.rotateRight();
 						input = new ConsoleKeyInfo();
 						break;

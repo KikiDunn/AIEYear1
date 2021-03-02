@@ -10,13 +10,13 @@ class Background
 	int ID;
 	public Background(BufferEngine engine)
 	{
-		ConsoleColor[,] background = new ConsoleColor[Console.BufferWidth*2, Console.BufferHeight*5];
+		int[,] background = new int[Console.BufferWidth*2, Console.BufferHeight*5];
 		this.engine = engine;
 		for (int y = 0; y < background.GetLength(1); y++)
 		{
 			for (int x = 0; x < background.GetLength(0); x++)
 			{
-				background[x, y] = ConsoleColor.Black;
+				background[x, y] = (int)ConsoleColor.White;
 			}
 		}
 		ID = engine.addSprite(background, 0, 0, false);

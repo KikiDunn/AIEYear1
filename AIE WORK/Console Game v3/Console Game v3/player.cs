@@ -8,42 +8,20 @@ class Player
 {
 	int ID;
 	BufferEngine engine;
-	public Player(BufferEngine engine)
+	int[,] playerSprite;
+	public Player(BufferEngine engine, int[,] playerSprite)
 	{
 		this.engine = engine;
-		ConsoleColor[,] playerSprite = new ConsoleColor[50, 50];
-		
-		for (int i = 0; i < playerSprite.GetLength(1); i++)
-		{
-			for (int j = 0; j < playerSprite.GetLength(0); j++)
-			{
-				if (j <= playerSprite.GetLength(0)/2 && i <= playerSprite.GetLength(1) / 2)
-				{
-					playerSprite[j, i] = ConsoleColor.Blue;
-				}
-				if (j > playerSprite.GetLength(0) / 2 && i <= playerSprite.GetLength(1) / 2)
-				{
-					playerSprite[j, i] = ConsoleColor.DarkRed;
-				}
-				if (j <= playerSprite.GetLength(0) / 2 && i > playerSprite.GetLength(1) / 2)
-				{
-					playerSprite[j, i] = ConsoleColor.DarkRed;
-				}
-				if (j > playerSprite.GetLength(0) / 2 && i > playerSprite.GetLength(1) / 2)
-				{
-					playerSprite[j, i] = ConsoleColor.Blue;
-				}
-			}
-		}
+		this.playerSprite = playerSprite;
 		ID = engine.addSprite(playerSprite, 0, 0, false);
 	}
 	public void moveUp()
 	{
-		engine.moveSprite(ID, 0, -1);
+		engine.moveSprite(ID, Math.Cos((engine.getAngle(ID)-90)*Math.PI/180)*5, Math.Sin((engine.getAngle(ID) - 90) * Math.PI / 180)*5);
 	}
 	public void moveDown()
 	{
-		engine.moveSprite(ID, 0, 1);
+		engine.moveSprite(ID, -Math.Cos((engine.getAngle(ID) - 90) * Math.PI / 180)*5, -Math.Sin((engine.getAngle(ID) - 90) * Math.PI / 180)*5);
 	}
 	public void moveLeft()
 	{
@@ -55,11 +33,11 @@ class Player
 	}
 	public void rotateLeft()
 	{
-		engine.rotateSprite(ID, -1);
+		engine.rotateSprite(ID, -5);
 	}
 	public void rotateRight()
 	{
-		engine.rotateSprite(ID, 1);
+		engine.rotateSprite(ID, 5);
 	}
 }
 

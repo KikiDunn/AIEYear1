@@ -4,7 +4,7 @@ using System.Text;
 
 class Sprite
 {
-	public ConsoleColor[,] pixels;
+	public int[,] pixels;
 	public double x;
 	public double y;
 	public double angle;

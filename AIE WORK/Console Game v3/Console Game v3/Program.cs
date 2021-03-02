@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 class Program
 {
+	
 	static void Main(string[] args)
 	{
 		Console.CursorVisible = false;
 		BufferEngine engine = new BufferEngine();
 		Background background = new Background(engine);
-		Player player = new Player(engine);
+		ImageLoader imageLoader = new ImageLoader();
+		Player player = new Player(engine, imageLoader.getSprite(0));
 		Input input = new Input(player);
 		while (!input.isQuit())
 		{
