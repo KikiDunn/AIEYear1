@@ -14,7 +14,9 @@ class BufferEngine
 	short height = (short)Console.BufferHeight;
 	ConsoleColor[,] framedata;
 	List<Sprite> sprites = new List<Sprite>();
+	List<Particle> particles = new List<Particle>();
 	int spriteCount = 0;
+	int particlescount = 0;
 	public BufferEngine()
 	{
 		
@@ -117,14 +119,36 @@ class BufferEngine
 		spriteCount++;
 		return spriteCount - 1;
 	}
+	public int addParticle(int[,] pixels, double[] posX, double[] posY, bool hidden, int particlesc)
+	{
+		Particle temp = new Particle();
+		temp.pixels = pixels;
+		temp.hidden = hidden;
+		temp.x = posX;
+		temp.y = posY;
+		temp.particles = particlesc;
+		particles.Add(temp);
+		particlescount++;
+		return particlescount - 1;
+	}
 	public void moveSprite(int ID, double posX, double posY)
 	{
 		sprites[ID].x += posX;
 		sprites[ID].y += posY;
 	}
+	public void setPose(int ID, double[] posX, double[] posY, double[] angle)
+	{
+		particles[ID].x = posX;
+		particles[ID].y = posY;
+		particles[ID].angle = angle;
+	}
 	public void hideSprite(int ID, bool hidden)
 	{
 		sprites[ID].hidden = hidden;
+	}
+	public void hideParticle(int ID, bool hidden)
+	{
+		particles[ID].hidden = hidden;
 	}
 	public void loadFrame()
 	{
@@ -176,6 +200,57 @@ class BufferEngine
 				}
 			}
 		}
+		for (int i = 0; i < particlescount; i++)
+		{
+			if (particles[i].hidden == false)
+			{
+				for (int pcount = 0; pcount < 100; pcount++)
+				{
+					if (particles[i].angle[pcount] != 0)
+					{
+						for (int y = 0; y < particles[i].pixels.GetLength(1); y++)
+						{
+							for (int x = 0; x < particles[i].pixels.GetLength(0); x++)
+							{
+								if (particles[i].pixels[x, y] != -1)
+								{
+									float hy = (float)Math.Sqrt(Math.Pow(x / 2f - particles[i].pixels.GetLength(0) / 4f, 2) + Math.Pow(y / 2f - particles[i].pixels.GetLength(1) / 4f, 2));
+									float oAngle = (float)Math.Atan2(y / 2f - (particles[i].pixels.GetLength(1) / 4f), x / 2f - (particles[i].pixels.GetLength(0) / 4f));
+									float trigX = (float)Math.Cos(oAngle + particles[i].angle[pcount] * (Math.PI / 180f)) * hy;
+									float trigY = (float)Math.Sin(oAngle + particles[i].angle[pcount] * (Math.PI / 180f)) * hy;
+									float relx = (trigX + particles[i].pixels.GetLength(0) / 4f);
+									float rely = (trigY + (particles[i].pixels.GetLength(1) / 4f)) / 2.5f;
+									int inx = (int)Math.Round(particles[i].x[pcount] / 2 + relx);
+									int iny = (int)Math.Round(particles[i].y[pcount] / 5 + rely);
+									if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+									{
+										framedata[inx, iny] = (ConsoleColor)particles[i].pixels[x, y];
+									}
+								}
+							}
+						}
+					}
+					else
+					{
+						for (int y = 2; y < particles[i].pixels.GetLength(1); y += 5)
+						{
+							for (int x = 0; x < particles[i].pixels.GetLength(0); x++)
+							{
+								if (particles[i].pixels[x, y] != -1)
+								{
+									int inx = (int)Math.Round(particles[i].x[pcount] / 2 + x / 2f);
+									int iny = (int)Math.Round(particles[i].y[pcount] / 5 + y / 5f);
+									if (inx < framedata.GetLength(0) && inx >= 0 && iny < framedata.GetLength(1) && iny >= 0)
+									{
+										framedata[inx, iny] = (ConsoleColor)sprites[i].pixels[x, y];
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 	public double getSpriteX(int ID)
 	{
@@ -192,6 +267,22 @@ class BufferEngine
 	public double getAngle(int ID)
 	{
 		return sprites[ID].angle;
+	}
+	public void changeFrame(int ID, int[,] pixels)
+	{
+		sprites[ID].pixels = pixels;
+	}
+	public double getParticleX(int ID, int index)
+	{
+		return particles[ID].x[index];
+	}
+	public double getParticleY(int ID, int index)
+	{
+		return particles[ID].y[index];
+	}
+	public double getParticleAngle(int ID, int index)
+	{
+		return particles[ID].angle[index];
 	}
 }
 	

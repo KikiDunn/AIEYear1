@@ -16,7 +16,7 @@ class Background
 		{
 			for (int x = 0; x < background.GetLength(0); x++)
 			{
-				background[x, y] = (int)ConsoleColor.White;
+				background[x, y] = (int)ConsoleColor.DarkGreen;
 			}
 		}
 		ID = engine.addSprite(background, 0, 0, false);

@@ -46,6 +46,22 @@ class Input
 						player.rotateRight();
 						input = new ConsoleKeyInfo();
 						break;
+					case ConsoleKey.Q:
+						player.rotateTLeft();
+						input = new ConsoleKeyInfo();
+						break;
+					case ConsoleKey.E:
+						player.rotateTRight();
+						input = new ConsoleKeyInfo();
+						break;
+					case ConsoleKey.F:
+						player.toggle();
+						input = new ConsoleKeyInfo();
+						break;
+					case ConsoleKey.Spacebar:
+						player.shoot();
+						input = new ConsoleKeyInfo();
+						break;
 				}
 			}
 		}).Start();
