@@ -42,5 +42,10 @@ namespace MathLibrary
 				y /= magnitude;
 			}
 		}
+		public float Dot(Vector2 b)
+		{
+			return x * b.x + y*b.y;
+		}
+
 	}	
 }

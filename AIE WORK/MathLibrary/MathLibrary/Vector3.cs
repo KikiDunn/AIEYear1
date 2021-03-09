@@ -45,5 +45,12 @@ namespace MathLibrary
 				z /= magnitude;
 			}
 		}
+		public Vector3 Cross(Vector3 b)
+		{
+			return new Vector3(
+				(y * b.z)-(z*b.y),
+				(z*b.x)-(x*b.z),
+				(x*b.y)-(y*b.x));
+		}
 	}
 }
