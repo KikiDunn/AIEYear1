@@ -29,5 +29,18 @@ namespace MathLibrary
 		{
 			return b*a;
 		}
+		public float Magnitude()
+		{
+			return (float)Math.Sqrt((x * x) + (y * y));
+		}
+		public void Normalise()
+		{
+			float magnitude = Magnitude();
+			if(magnitude != 0)
+			{
+				x /= magnitude;
+				y /= magnitude;
+			}
+		}
 	}	
 }
