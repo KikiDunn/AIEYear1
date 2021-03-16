@@ -48,5 +48,16 @@ namespace MathLibrary
 				w /= magnitude;
 			}
 		}
+		public float Dot(Vector4 b)
+		{
+			return 0f;
+		}
+		public Vector4 Cross(Vector4 b)
+		{
+			return new Vector4(
+				(y * b.z) - (z * b.y),
+				(z * b.x) - (x * b.z),
+				(x * b.y) - (y * b.x));
+		}
 	}
 }

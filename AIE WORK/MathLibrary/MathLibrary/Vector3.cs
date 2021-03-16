@@ -52,5 +52,10 @@ namespace MathLibrary
 				(z*b.x)-(x*b.z),
 				(x*b.y)-(y*b.x));
 		}
+		public float Dot(Vector3 b)
+		{
+			return 0f;
+		}
+
 	}
 }
