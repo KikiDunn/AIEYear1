@@ -50,7 +50,7 @@ namespace MathLibrary
 		}
 		public float Dot(Vector4 b)
 		{
-			return 0f;
+			return (x * b.x) + (y * b.y) + (z * b.z) + (w * b.w);
 		}
 		public Vector4 Cross(Vector4 b)
 		{

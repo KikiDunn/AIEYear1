@@ -7,11 +7,6 @@ namespace MathLibrary
 	public struct Matrix3
 	{
 		public float m1, m2, m3, m4, m5, m6, m7, m8, m9;
-		public Matrix3(bool bDefault = true) : this(1f, 1f) { }
-		public Matrix3(float x, float y, float z = 1) : this(x, 0, 0,
-														     0, y, 0,
-															 0, 0, z){ }
-
 		public Matrix3(float n1, float n2, float n3,
 					   float n4, float n5, float n6,
 					   float n7, float n8, float n9)
@@ -42,27 +37,29 @@ namespace MathLibrary
 		}
 		public void SetRotateX(float fRad)
 		{
-
+			m1 = 1;
 			m5 = (float)Math.Cos(fRad);
-			m6 = (float)-Math.Sin(fRad);
-			m8 = (float)Math.Sin(fRad);
+			m6 = (float)Math.Sin(fRad);
+			m8 = (float)-Math.Sin(fRad);
 			m9 = (float)Math.Cos(fRad);
 		}
 
 		public void SetRotateY(float fRad)
 		{
 			m1 = (float)Math.Cos(fRad);
-			m3 = (float)Math.Sin(fRad);
-			m7 = (float)-Math.Sin(fRad);
+			m3 = (float)-Math.Sin(fRad);
+			m5 = 1;
+			m7 = (float)Math.Sin(fRad);
 			m9 = (float)Math.Cos(fRad);
 		}
 
 		public void SetRotateZ(float fRad)
 		{
 			m1 = (float)Math.Cos(fRad);
-			m2 = (float)-Math.Sin(fRad);
-			m4 = (float)Math.Sin(fRad);
+			m2 = (float)Math.Sin(fRad);
+			m4 = (float)-Math.Sin(fRad);
 			m5 = (float)Math.Cos(fRad);
+			m9 = 1;
 		}
 
 		//Extra helpful functions

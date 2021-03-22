@@ -37,7 +37,7 @@ namespace MathLibrary
 
 		public byte GetGreen()
 		{
-			return (byte)(colour << 16);
+			return (byte)(colour >> 16);
 		}
 		public void SetBlue(byte blue)
 		{
@@ -48,7 +48,7 @@ namespace MathLibrary
 
 		public byte GetBlue()
 		{
-			return (byte)(colour << 8);
+			return (byte)(colour >> 8);
 		}
 		public void SetAlpha(byte alpha)
 		{

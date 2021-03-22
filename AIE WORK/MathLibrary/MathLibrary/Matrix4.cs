@@ -40,26 +40,32 @@ namespace MathLibrary
 		}
 		public void SetRotateX(float fRad)
 		{
-			m5 = (float)Math.Cos(fRad);
-			m6 = (float)-Math.Sin(fRad);
-			m8 = (float)Math.Sin(fRad);
-			m9 = (float)Math.Cos(fRad);
+			m1 = 1;
+			m6 = (float)Math.Cos(fRad);
+			m7 = (float)Math.Sin(fRad);
+			m10 = (float)-Math.Sin(fRad);
+			m11 = (float)Math.Cos(fRad);
+			m16 = 1;
 		}
 
 		public void SetRotateY(float fRad)
 		{
 			m1 = (float)Math.Cos(fRad);
-			m3 = (float)Math.Sin(fRad);
-			m7 = (float)-Math.Sin(fRad);
-			m9 = (float)Math.Cos(fRad);
+			m3 = (float)-Math.Sin(fRad);
+			m6 = 1;
+			m9 = (float)Math.Sin(fRad);
+			m11 = (float)Math.Cos(fRad);
+			m16 = 1;
 		}
 
 		public void SetRotateZ(float fRad)
 		{
 			m1 = (float)Math.Cos(fRad);
-			m2 = (float)-Math.Sin(fRad);
-			m4 = (float)Math.Sin(fRad);
-			m5 = (float)Math.Cos(fRad);
+			m2 = (float)Math.Sin(fRad);
+			m5 = (float)-Math.Sin(fRad);
+			m6 = (float)Math.Cos(fRad);
+			m11 = 1;
+			m16 = 1;
 		}
 
 		//Extra helpful functions
