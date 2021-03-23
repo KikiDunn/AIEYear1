@@ -33,7 +33,7 @@ namespace MathLibrary
 		{
 			return (float)Math.Sqrt((x * x) + (y * y));
 		}
-		public void Normalise()
+		public Vector2 Normalise()
 		{
 			float magnitude = Magnitude();
 			if(magnitude != 0)
@@ -41,6 +41,7 @@ namespace MathLibrary
 				x /= magnitude;
 				y /= magnitude;
 			}
+			return this;
 		}
 		public float Dot(Vector2 b)
 		{

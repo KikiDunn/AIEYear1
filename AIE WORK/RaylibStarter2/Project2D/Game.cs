@@ -22,9 +22,8 @@ namespace Project2D
         private int frames;
 
         private float deltaTime = 0.005f;
-
-        Image logo;
-        Texture2D texture;
+		GameObject world;
+		Tank player;
 
         public Game()
         {
@@ -41,8 +40,9 @@ namespace Project2D
             }
 
 			//Initialize objects here
-            logo = LoadImage("../Images/aie-logo-dark.jpg");
-            texture = LoadTextureFromImage(logo);
+			world = new GameObject("");
+			player = new Tank("../Images/aie-logo-dark.jpg");
+			world.adoptChild(player);
 		}
 
         public void Shutdown()
@@ -64,6 +64,8 @@ namespace Project2D
             frames++;
 
 			//Update game objects here          
+			world.updateTransforms();
+			world.Update(deltaTime);
 		}
 
         public void Draw()
@@ -75,9 +77,10 @@ namespace Project2D
 			//Draw game objects here
             DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
 
-			DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
-
+			//DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
+			world.draw();
 			EndDrawing();
+			
         }
 
     }

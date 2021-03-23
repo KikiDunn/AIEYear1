@@ -21,7 +21,13 @@ namespace MathLibrary
 			m8 = n8;
 			m9 = n9;
 		}
-
+		public Matrix3 Identity()
+		{
+			m1 = 1; m4 = 0; m7 = 0;
+			m2 = 0; m5 = 1; m8 = 0;
+			m3 = 0; m6 = 0; m9 = 1;
+			return this;
+		}
 		public static Vector3 operator *(Matrix3 a, Vector3 b)
 		{
 			return new Vector3(a.m1 * b.x + a.m4 * b.y + a.m7 * b.z, 
@@ -37,7 +43,7 @@ namespace MathLibrary
 		}
 		public void SetRotateX(float fRad)
 		{
-			m1 = 1;
+			
 			m5 = (float)Math.Cos(fRad);
 			m6 = (float)Math.Sin(fRad);
 			m8 = (float)-Math.Sin(fRad);
@@ -48,18 +54,18 @@ namespace MathLibrary
 		{
 			m1 = (float)Math.Cos(fRad);
 			m3 = (float)-Math.Sin(fRad);
-			m5 = 1;
+			
 			m7 = (float)Math.Sin(fRad);
 			m9 = (float)Math.Cos(fRad);
 		}
 
-		public void SetRotateZ(float fRad)
+		public Matrix3 SetRotateZ(float fRad)
 		{
 			m1 = (float)Math.Cos(fRad);
 			m2 = (float)Math.Sin(fRad);
 			m4 = (float)-Math.Sin(fRad);
 			m5 = (float)Math.Cos(fRad);
-			m9 = 1;
+			return this;
 		}
 
 		//Extra helpful functions

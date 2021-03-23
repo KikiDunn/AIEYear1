@@ -7,11 +7,6 @@ namespace MathLibrary
 	public struct Matrix4
 	{
 		public float m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16;
-		public Matrix4(bool bDefault = true) : this(1f, 1f, 1f) { }
-		public Matrix4(float x, float y, float z, float w = 1f) : this(x, 0, 0, 0,
-																	   0, y, 0, 0,
-																	   0, 0, z, 0,
-																	   0, 0, 0, w) { }
 		public Matrix4(float n1,  float n2,  float n3,  float n4,
 					   float n5,  float n6,  float n7,  float n8, 
 					   float n9,  float n10, float n11, float n12,
@@ -22,7 +17,13 @@ namespace MathLibrary
 			m3 = n3; m7 = n7; m11 = n11; m15 = n15;
 			m4 = n4; m8 = n8; m12 = n12; m16 = n16;
 		}
-
+		public void Identity()
+		{
+			m1 = 1; m5 = 0; m9  = 0; m13 = 0;
+			m2 = 0; m6 = 1; m10 = 0; m14 = 0;
+			m3 = 0; m7 = 0; m11 = 1; m15 = 0;
+			m4 = 0; m8 = 0; m12 = 0; m16 = 1;
+		}
 		public static Vector4 operator *(Matrix4 a, Vector4 b)
 		{
 			return new Vector4(a.m1 * b.x + a.m5 * b.y + a.m9  * b.z + a.m13 * b.w,

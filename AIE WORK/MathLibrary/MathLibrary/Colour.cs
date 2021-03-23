@@ -54,12 +54,12 @@ namespace MathLibrary
 		{
 			//RGBA
 			colour = colour & 0xFFFFFF00;
-			colour = colour | (uint)(alpha);
+			colour = colour | alpha;
 		}
 
 		public byte GetAlpha()
 		{
-			return (byte)(colour);
+			return (byte)(colour & 0x000000FF);
 		}
 	}
 }
