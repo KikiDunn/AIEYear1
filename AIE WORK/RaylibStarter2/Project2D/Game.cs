@@ -41,7 +41,7 @@ namespace Project2D
 
 			//Initialize objects here
 			world = new GameObject("");
-			player = new Tank("../Images/aie-logo-dark.jpg");
+			player = new Tank("../Images/tank.png");
 			world.adoptChild(player);
 		}
 
