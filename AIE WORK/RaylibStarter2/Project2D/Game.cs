@@ -23,9 +23,13 @@ namespace Project2D
 
         private float deltaTime = 0.005f;
 		GameObject world;
+		GameObject topCollider;
+		GameObject bottomCollider; 
+		GameObject leftCollider; 
+		GameObject rightCollider;
 		Tank player;
-
-        public Game()
+		CollisionManager collisionManager;
+		public Game()
         {
         }
 
@@ -40,8 +44,35 @@ namespace Project2D
             }
 
 			//Initialize objects here
+			collisionManager = new CollisionManager();
 			world = new GameObject("");
+
+			topCollider = new GameObject("");
+			bottomCollider = new GameObject("");
+			leftCollider = new GameObject("");
+			rightCollider = new GameObject("");
+
+			topCollider.collidable = true;
+			topCollider.collider = new Vector2(1920/2, 30);
+			topCollider.SetPosition(new Vector2(1920 / 2, -30));
+			bottomCollider.collidable = true;
+			bottomCollider.collider = new Vector2(1920 / 2, 30);
+			bottomCollider.SetPosition(new Vector2(1920 / 2, 1080+ 30));
+			leftCollider.collidable = true;
+			leftCollider.collider = new Vector2(30, 1080);
+			leftCollider.SetPosition(new Vector2(1920 + 30, 1080/2));
+			rightCollider.collidable = true;
+			rightCollider.collider = new Vector2(30, 1080);
+			rightCollider.SetPosition(new Vector2(-30, 1080/2));
+
 			player = new Tank("../Images/tank.png");
+			player.SetPosition(new Vector2(1920 / 2, 1080 / 2));
+			collisionManager.Add(player);
+
+			collisionManager.Add(topCollider);
+			collisionManager.Add(bottomCollider); 
+			collisionManager.Add(leftCollider); 
+			collisionManager.Add(rightCollider);
 			world.adoptChild(player);
 		}
 
@@ -66,6 +97,7 @@ namespace Project2D
 			//Update game objects here          
 			world.updateTransforms();
 			world.Update(deltaTime);
+			collisionManager.Update();
 		}
 
         public void Draw()

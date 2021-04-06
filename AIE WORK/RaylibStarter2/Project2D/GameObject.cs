@@ -10,6 +10,8 @@ namespace Project2D
 {
 	class GameObject
 	{
+		public Vector2 collider;
+		public bool collidable = false;
 		protected GameObject m_Parent = null;
 		protected List<GameObject> m_Children = new List<GameObject>();
 		protected Matrix3 m_LocalTransform;
@@ -80,6 +82,19 @@ namespace Project2D
 			{
 				child.updateTransforms();
 			}
+		}
+		public Vector2 getPosition()
+		{
+			return new Vector2(m_LocalTransform.m7, m_LocalTransform.m8);
+		}
+		public virtual void OnCollision()
+		{
+
+		}
+		public void SetPosition(Vector2 pos)
+		{
+			m_LocalTransform.m7 = pos.x;
+			m_LocalTransform.m8 = pos.y;
 		}
 	}
 }

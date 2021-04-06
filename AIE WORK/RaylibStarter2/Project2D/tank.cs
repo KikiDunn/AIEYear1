@@ -13,12 +13,13 @@ namespace Project2D
 		Turret node;
 		private Vector2 velocity;
 		private Vector2 acceleration;
+		private Vector2 prevPos;
 		private float force = 1000000;
 		private float mass = 15000;
 		private float circularVelocity;
 		private float circularAcceleration;
-		private float drag = 0.05f;
-		private float dragCoefficient = 0.0000001f;
+		private float drag = 0.0005f;
+		private float dragCoefficient = 0.0000000001f;
 		public Tank(string image) : base(image)
 		{
 			velocity = new Vector2(0, 0);
@@ -30,9 +31,12 @@ namespace Project2D
 			this.adoptChild(node);
 			node.adoptChild(turret);
 			node.translate(new Vector2(0, -23));
+			collidable = true;
+			collider = new Vector2(m_Texture.height/2, m_Texture.height/2);
 		}
 		public override void Update(float fDeltaTime)
 		{
+			prevPos = new Vector2(m_LocalTransform.m7, m_LocalTransform.m8);
 			acceleration = velocity * -drag;
 			circularAcceleration = circularVelocity * -20000*drag;
 			if (IsKeyDown(Raylib.KeyboardKey.KEY_W))
@@ -71,8 +75,15 @@ namespace Project2D
 			}
 			circularVelocity = circularVelocity + circularAcceleration * fDeltaTime * 0.0001f * (force / mass);
 			m_LocalTransform *= new Matrix3().Identity().SetRotateZ(circularVelocity);
+
 			m_LocalTransform.m7 = m_LocalTransform.m7 + velocity.x * 11 * fDeltaTime;
 			m_LocalTransform.m8 = m_LocalTransform.m8 + velocity.y * 11 * fDeltaTime;
+		}
+		public override void OnCollision()
+		{
+			m_LocalTransform.m7 = prevPos.x;
+			m_LocalTransform.m8 = prevPos.y;
+			velocity = new Vector2(-velocity.x/2, -velocity.y/2);
 		}
 	}
 }
