@@ -73,7 +73,7 @@ namespace Project2D
 			collisionManager.Add(bottomCollider); 
 			collisionManager.Add(leftCollider); 
 			collisionManager.Add(rightCollider);
-			world.adoptChild(player);
+			world.AdoptChild(player);
 		}
 
         public void Shutdown()
@@ -95,7 +95,7 @@ namespace Project2D
             frames++;
 
 			//Update game objects here          
-			world.updateTransforms();
+			world.UpdateTransforms();
 			world.Update(deltaTime);
 			collisionManager.Update();
 		}
@@ -110,7 +110,7 @@ namespace Project2D
             DrawText(fps.ToString(), 10, 10, 14, RLColor.RED);
 
 			//DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, RLColor.WHITE);
-			world.draw();
+			world.Draw();
 			EndDrawing();
 			
         }

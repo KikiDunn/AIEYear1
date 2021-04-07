@@ -33,14 +33,14 @@ namespace Project2D
 		}
 		private bool BroadCollision(GameObject collider, GameObject collider2)
 		{
-			float min1x = collider.getPosition().x - collider.collider.x;
-			float max1x= collider.getPosition().x + collider.collider.x;
-			float min1y = collider.getPosition().y - collider.collider.y;
-			float max1y = collider.getPosition().y + collider.collider.y;
-			float min2x = collider2.getPosition().x - collider2.collider.x;
-			float max2x = collider2.getPosition().x + collider2.collider.x;
-			float min2y = collider2.getPosition().y - collider2.collider.y;
-			float max2y = collider2.getPosition().y + collider2.collider.y;
+			float min1x = collider.GetPosition().x - collider.collider.x;
+			float max1x= collider.GetPosition().x + collider.collider.x;
+			float min1y = collider.GetPosition().y - collider.collider.y;
+			float max1y = collider.GetPosition().y + collider.collider.y;
+			float min2x = collider2.GetPosition().x - collider2.collider.x;
+			float max2x = collider2.GetPosition().x + collider2.collider.x;
+			float min2y = collider2.GetPosition().y - collider2.collider.y;
+			float max2y = collider2.GetPosition().y + collider2.collider.y;
 			if (((min1x < max2x) && (max1x > min2x)) && ((min1y < max2y) && (max1y > min2y)))
 			{
 				return true;

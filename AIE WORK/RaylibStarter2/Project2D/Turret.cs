@@ -12,11 +12,11 @@ namespace Project2D
 		public Turret(string image) : base(image)
 		{
 		}
-		public void rotate(float rad)
+		public void Rotate(float rad)
 		{
 			m_LocalTransform *= new Matrix3().Identity().SetRotateZ(rad);
 		}
-		public void translate(Vector2 position)
+		public void Translate(Vector2 position)
 		{
 			m_LocalTransform.m7 = position.x;
 			m_LocalTransform.m8 = position.y;

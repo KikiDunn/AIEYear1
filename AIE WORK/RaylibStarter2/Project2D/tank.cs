@@ -28,9 +28,9 @@ namespace Project2D
 			circularAcceleration = 0;
 			turret = new GameObject("../Images/turret.png");
 			node = new Turret("");
-			this.adoptChild(node);
-			node.adoptChild(turret);
-			node.translate(new Vector2(0, -23));
+			this.AdoptChild(node);
+			node.AdoptChild(turret);
+			node.Translate(new Vector2(0, -23));
 			collidable = true;
 			collider = new Vector2(m_Texture.height/2, m_Texture.height/2);
 		}
@@ -57,11 +57,11 @@ namespace Project2D
 			}
 			if (IsKeyDown(Raylib.KeyboardKey.KEY_Q))
 			{
-				node.rotate((float)(-360 * Math.PI/180 * fDeltaTime));
+				node.Rotate((float)(-360 * Math.PI/180 * fDeltaTime));
 			}
 			if (IsKeyDown(Raylib.KeyboardKey.KEY_E))
 			{
-				node.rotate((float)(360 * Math.PI / 180 * fDeltaTime));
+				node.Rotate((float)(360 * Math.PI / 180 * fDeltaTime));
 			}
 			velocity = velocity + acceleration * (force/mass) * fDeltaTime;
 
@@ -83,7 +83,7 @@ namespace Project2D
 		{
 			m_LocalTransform.m7 = prevPos.x;
 			m_LocalTransform.m8 = prevPos.y;
-			velocity = new Vector2(-velocity.x/2, -velocity.y/2);
+			velocity = new Vector2(-velocity.x *0.5f, -velocity.y*0.5f);
 		}
 	}
 }

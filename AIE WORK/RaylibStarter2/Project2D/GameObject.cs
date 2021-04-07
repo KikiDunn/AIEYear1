@@ -26,40 +26,28 @@ namespace Project2D
 			m_LocalTransform.Identity();
 			m_GlobalTransform.Identity();
 		}
-		public void UpdateTransforms()
-		{
-			if (m_Parent != null)
-				m_GlobalTransform = m_Parent.m_GlobalTransform * m_LocalTransform;
-			else
-				m_GlobalTransform = m_LocalTransform;
-
-			foreach (GameObject child in m_Children)
-			{
-				child.UpdateTransforms();
-			}
-		}
-		public void draw()
+		public void Draw()
 		{
 			Renderer.DrawTexture(m_Texture, m_GlobalTransform, colour);
 			foreach (GameObject child in m_Children)
 			{
-				child.draw();
+				child.Draw();
 			}
 			//DrawTextureEx(m_Texture, Renderer.ToRLVector2(new Vector2(0, 0)), 0, 1, RLColor.WHITE);
 		}
-		public void addParent(GameObject parent)
+		public void AddParent(GameObject parent)
 		{
 			m_Parent = parent;
 		}
-		public void adoptChild(GameObject child)
+		public void AdoptChild(GameObject child)
 		{
 			m_Children.Add(child);
-			child.addParent(this);
+			child.AddParent(this);
 		}
-		public void disownChild(GameObject child)
+		public void DisownChild(GameObject child)
 		{
 			m_Children.Remove(child);
-			child.addParent(null);
+			child.AddParent(null);
 		}
 		public virtual void Update(float fDeltaTime)
 		{
@@ -68,7 +56,7 @@ namespace Project2D
 				child.Update(fDeltaTime);
 			}
 		}
-		public void updateTransforms()
+		public void UpdateTransforms()
 		{
 			if(m_Parent != null)
 			{
@@ -80,10 +68,10 @@ namespace Project2D
 			}
 			foreach(GameObject child in m_Children)
 			{
-				child.updateTransforms();
+				child.UpdateTransforms();
 			}
 		}
-		public Vector2 getPosition()
+		public Vector2 GetPosition()
 		{
 			return new Vector2(m_LocalTransform.m7, m_LocalTransform.m8);
 		}
