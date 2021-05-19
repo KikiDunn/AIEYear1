@@ -14,8 +14,8 @@ namespace Project2D
         {
             Game game = new Game();
 
-            InitWindow(1920, 1080, "program");
-			ToggleFullscreen();
+            InitWindow(1020, 580, "program");
+			//ToggleFullscreen();
             game.Init();
 
             while (!WindowShouldClose())
