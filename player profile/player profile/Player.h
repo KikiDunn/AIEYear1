@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 using namespace std;
-class Person
+class Player
 {
   public:
-	  Person();
-	  Person(string name, int age);
-	  int age = 0;
+	  Player();
+	  Player(string name, int ID);
+	  int ID = 0;
 	  string name = "";
 };
 
