@@ -43,7 +43,7 @@ namespace MathLibrary
 		}
 		public void SetRotateX(float fRad)
 		{
-			
+			m1 = 1;
 			m5 = (float)Math.Cos(fRad);
 			m6 = (float)Math.Sin(fRad);
 			m8 = (float)-Math.Sin(fRad);
@@ -54,7 +54,7 @@ namespace MathLibrary
 		{
 			m1 = (float)Math.Cos(fRad);
 			m3 = (float)-Math.Sin(fRad);
-			
+			m5 = 1;
 			m7 = (float)Math.Sin(fRad);
 			m9 = (float)Math.Cos(fRad);
 		}
@@ -65,6 +65,7 @@ namespace MathLibrary
 			m2 = (float)Math.Sin(fRad);
 			m4 = (float)-Math.Sin(fRad);
 			m5 = (float)Math.Cos(fRad);
+			m9 = 1;
 			return this;
 		}
 
