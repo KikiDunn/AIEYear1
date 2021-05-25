@@ -1,6 +1,7 @@
 #include "Player.h"
-Player::Player(string name, int level) {
-	this->name = name;
+#include <string.h>
+Player::Player(char name[], int level) {
+	strcpy_s(this->name, name);
 	this->ID = level;
 }
 Player::Player() {}
