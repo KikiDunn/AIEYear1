@@ -11,9 +11,9 @@ static void sort(Player**& playerProfiles, int count) {
 		sorted = true;
 		for (int i = 0; i < count - 1; i++) {
 			if (playerProfiles[i]->ID > playerProfiles[i + 1]->ID) {
-				playerProfiles[i]->ID += playerProfiles[i + 1]->ID;
-				playerProfiles[i + 1]->ID = playerProfiles[i]->ID - playerProfiles[i + 1]->ID;
-				playerProfiles[i]->ID -= playerProfiles[i + 1]->ID;
+				Player* temp = playerProfiles[i];
+				playerProfiles[i] = playerProfiles[i + 1];
+				playerProfiles[i + 1] = temp;
 				sorted = false;
 			}
 		}
