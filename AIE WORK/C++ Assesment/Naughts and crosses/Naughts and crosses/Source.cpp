@@ -5,6 +5,8 @@
 int main() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	char input = ' ';
+
+	//array for game logic
 	char game[3][3] = { {' ', ' ', ' '},
 						{' ', ' ', ' '},
 						{' ', ' ', ' '}
@@ -14,6 +16,8 @@ int main() {
 	int positiony = 0;
 	char turn = 'X';
 	int index;
+
+	//Array for the base game visualisation
 	char blank[132] = { ' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '\n',
 						' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '\n',
 						' ', ' ', ' ', '|', ' ', ' ', ' ', '|', ' ', ' ', ' ', '\n',
@@ -29,9 +33,13 @@ int main() {
 	char lastGameState[132];
 	strcpy_s(board, 132, blank);
 	strcpy_s(lastGameState, 132, board);
+
+	//Main game loop
 	while (input != 'q') {
 		system("cls");
 		index = positiony * 48 + positionx * 4;
+
+		//Checks whose turn it is before choosing cursor indicator
 		if (turn == 'X') {
 			board[index] = '\\';
 			board[index + 2] = '/';
@@ -48,9 +56,12 @@ int main() {
 			board[index + 26] = '/';
 		}
 		std::cout << board;
+
+		//user input
 		input = _getch();
-		
 		switch (input) {
+
+			//wasd moves the cursor up down left right or to the nearest empty square
 			case 'w':
 				if (positiony > 0) {
 					if (game[positiony - 1][positionx] == ' ') {
@@ -187,6 +198,8 @@ int main() {
 					}
 				}
 				break;
+
+			//space places the naught or cross onto the current square and ends the turn
 			case ' ':
 				strcpy_s(lastGameState, 132, board);
 				game[positiony][positionx] = turn;
@@ -196,6 +209,8 @@ int main() {
 				else {
 					turn = 'X';
 				}
+
+				//Checks if somone has won
 				for (int i = 0; i < 3; i++) {
 					if (game[i][0] != ' ') {
 						if (game[i][0] == game[i][1] && game[i][0] == game[i][2]) {
@@ -230,6 +245,8 @@ int main() {
 				break;
 
 		}
+
+		//resets the game visualisation and clears the game logic array
 		if (win == true) {
 			_getch();
 			strcpy_s(lastGameState, 132, blank);

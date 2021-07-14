@@ -4,7 +4,7 @@
 #include<fstream>
 #include <conio.h>
 using namespace std;
-
+//Sort function to take in an array of players and sort them in numerical order
 static void sort(Player**& playerProfiles, int count) {
 	bool sorted = false;
 	while (!sorted) {
@@ -19,9 +19,10 @@ static void sort(Player**& playerProfiles, int count) {
 		}
 	}
 }
-
+//Start of the program
 int main() {
 	int size = 10;
+	//Ititialises the array of players and variables
 	Player** playerProfiles = new Player*[size];
 	for (int i = 0; i < size; i++) {
 		playerProfiles[i] = new Player();
@@ -30,6 +31,8 @@ int main() {
 	char input[30];
 	int input2 = 0;
 	int inputcounter = 0;
+
+	//Reads from the file to the player profiles array
 	std::fstream file;
 	file.open("data.dat", std::ios_base::in | std::ios_base::binary);
 	if (file.is_open())
@@ -46,17 +49,22 @@ int main() {
 		file.close();
 
 	}
-	
+	//main menu loop
 	while (true) {
 		char menu[10];
 		cout << "+++++++Player Profiles+++++++\n" << "sort, view, add, search, or q to quit" << endl;
+		//user input
 		cin >> menu;
+
+		//Prints the array of player profiles
 		if (strcmp(menu, "view") == 0) {
 			for (int i = 0; i < count; i++) {
 				std::cout << playerProfiles[i]->name << ", " << playerProfiles[i]->ID << std::endl;
 			}
 			
 		}
+
+		//Adds a player profile
 		if (strcmp(menu, "add") == 0) {
 			cout << "Add person name or done to finish:" << endl;
 			cin >> input;
@@ -66,9 +74,13 @@ int main() {
 			playerProfiles[count]->ID = input2;
 			count++;
 		}
+
+		//Calls the sort function on the array
 		if (strcmp(menu, "sort") == 0) {
 			sort(playerProfiles, count);
 		}
+
+		//Searches the array for an ID
 		if (strcmp(menu, "search") == 0) {
 			sort(playerProfiles, count);
 			std::cout << "What player ID are you looking for: ";
@@ -86,6 +98,8 @@ int main() {
 			}
 			cout << "\nPlayer ID: " << playerProfiles[searchHead]->ID << " with name " << playerProfiles[searchHead]->name << "found" << endl;
 		}
+		
+		//Starts the quit process
 		if (strcmp(menu, "q") == 0) {
 			break;
 		}
@@ -93,6 +107,8 @@ int main() {
 		_getch();
 		system("cls");
 	}
+
+	//Writes the contents of the player profile array to the file before quitting
 	file.open("data.dat", std::ios_base::out | std::ios_base::binary);
 	if (file.is_open())
 	{
